@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
-"""Nginx log statistics from MongoDB"""
+"""Nginx logs statistics from MongoDB"""
 
 
 from pymongo import MongoClient
 
 
 def print_stats():
+    """
+    Prints statistics of Nginx logs stored in MongoDB.
+
+    Displays:
+    - total number of logs
+    - count of each HTTP method
+    - number of GET requests to /status
+    """
     client = MongoClient("mongodb://127.0.0.1:27017")
     collection = client.logs.nginx
 
@@ -28,4 +36,4 @@ def print_stats():
 
 
 if __name__ == "__main__":
-    print_stats()
+    print_stats())
