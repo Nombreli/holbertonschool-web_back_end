@@ -7,11 +7,11 @@ from pymongo import MongoClient
 
 def print_stats():
     """
-    Prints statistics of Nginx logs stored in MongoDB.
+    Prints statistics about Nginx logs stored in MongoDB.
 
     Displays:
     - total number of logs
-    - count of each HTTP method
+    - count of HTTP methods (GET, POST, PUT, PATCH, DELETE)
     - number of GET requests to /status
     """
     client = MongoClient("mongodb://127.0.0.1:27017")
@@ -36,4 +36,4 @@ def print_stats():
 
 
 if __name__ == "__main__":
-    print_stats())
+    print_stats()
